@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 
 
-export default class Me extends Component{
+export default class Card extends Component{
 	
 	render(){
 		return (
 			<div class="page">
-				我的
+				卖座卡
 			</div>
 		)
 	}

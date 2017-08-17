@@ -5,6 +5,6 @@ import App from './App.js'
 import './css/index.css'
 
 ReactDOM.render(
-	<App/>,
+	< App />,
 	document.getElementById('app')
 )
