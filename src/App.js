@@ -14,11 +14,13 @@ export default class App extends Component{
 		}
 	}
 	render(){
+		
+		let data = location.pathname == '/shop'?SilderInfo.shoppage:SilderInfo.homepage
 		let pages = SilderInfo.homepage.map((item,index)=>{
-			return <Route key={index} path={item.path} component={item.com} />
+			return <Route exact={item.path=='/'?true:false} key={index} path={item.path} component={item.com} />
 		})
-		let navs = SilderInfo.homepage.map((item,index)=>{
-			return <NavLink key={index} to={item.path} onClick={this.hide.bind(this)}><span>{item.title}</span><span class='arrowRight'></span></NavLink>
+		let navs = data.map((item,index)=>{
+			return <NavLink key={index} to={item.path} onClick={this.showpage.bind(this,item.header)}><span>{item.title}</span><span class='arrowRight'></span></NavLink>
 		})
 		let navsStyle = {
 			transform:this.state.show?'none':'translateX(-100%)'
@@ -47,6 +49,10 @@ export default class App extends Component{
 	meunhide(){
 		this.setState({show:!this.state.show})
 		console.log(this.state.show)
+	}
+	showpage(val){
+		this.setState({show:false,hometitle:val})
+		
 	}
 	hide(){
 		this.setState({show:false})
