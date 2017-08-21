@@ -16,11 +16,11 @@ export default class City extends Component{
 			let obj = {};
 			let char =String.fromCharCode(i+65);
 			let arr1 = [];
-			obj[char] = [];
+			obj.title = char;
 			let citys = this.state.citys.map((item,index)=>{		
 				if(char == item.pinyin[0]){
 					arr1.push(item)
-					obj[char] = arr1;
+					obj.citys = arr1;
 				}
 			})
 			arr.push(obj)
