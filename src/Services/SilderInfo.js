@@ -1,5 +1,5 @@
 import Home from '../pages/Home.js'
-import Movies from '../pages/Movies.js'
+import Movies from '../pages/movies/Movies.js'
 import Cinema from '../pages/Cinema.js'
 import Shop from '../pages/Shop.js'
 import Me from '../pages/Me.js'

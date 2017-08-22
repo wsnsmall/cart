@@ -1,0 +1,20 @@
+.citylist p{
+    height: 40px;
+    line-height: 40px;
+    margin-left: 15px;
+}
+.citylist span{
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.cityname{
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+.gps{
+    color: #e2941a
+}

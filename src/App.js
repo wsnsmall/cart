@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router , NavLink , Route} from 'react-router-dom'
+import {HashRouter as Router , NavLink , Route} from 'react-router-dom'
 
 
 import SilderInfo from './Services/SilderInfo.js'
@@ -10,12 +10,13 @@ export default class App extends Component{
 		super();
 		this.state = {
 			hometitle:'卖座电影',
-			show:false
+			show:false,
+			dis:"none"
 		}
 	}
 	render(){
 		
-		let data = location.pathname == '/shop'?SilderInfo.shoppage:SilderInfo.homepage
+		let data = location.hash == '#/shop'?SilderInfo.shoppage:SilderInfo.homepage
 		let pages = SilderInfo.homepage.map((item,index)=>{
 			return <Route exact={item.path=='/'?true:false} key={index} path={item.path} component={item.com} />
 		})
@@ -26,7 +27,11 @@ export default class App extends Component{
 			transform:this.state.show?'none':'translateX(-100%)'
 		}
 		let coverStyle = {
-			background:this.state.show?'rgba(0, 0, 0, 0.5)':'rgba(0, 0, 0, 0)'
+			background:this.state.show?'rgba(0, 0, 0, 0.5)':'rgba(0, 0, 0, 0)',
+			
+		}
+		let rootStyle = {
+			display:this.state.dis
 		}
 		return (
 			<Router>
@@ -34,27 +39,26 @@ export default class App extends Component{
 					<AppHeader title={this.state.hometitle} meunhide={this.meunhide.bind(this)}/>
 					{pages}
 					<Route path="/city-list" component={City}/>
-					<div id='root'>
+					<div id='root' style={rootStyle}>
 						<span class='cover' style={coverStyle} onClick={this.hide.bind(this)}></span>
-						<nav class='navs' style={navsStyle}>
-							{navs}
-						</nav>	
+						
 						
 					</div>
-					
+					<nav class='navs' style={navsStyle}>
+							{navs}
+						</nav>	
 				</div>
 			</Router>
 		)
 	}
 	meunhide(){
-		this.setState({show:!this.state.show})
-		console.log(this.state.show)
+		this.setState({show:!this.state.show,dis:this.state.dis=="none"?"block":"none"})
 	}
 	showpage(val){
 		this.setState({show:false,hometitle:val})
 		
 	}
 	hide(){
-		this.setState({show:false})
+		this.setState({show:false,dis:this.state.dis=="none"?"block":"none"})
 	}
 }

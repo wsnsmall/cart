@@ -1,9 +1,13 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
-
+import store from '../../store'
+let changecitys;
 export default class AppHeader extends Component{
-	
+	constructor(){
+		super();
+		this.state = store.getState()
+	}
 	
 	render(){
 		return (
@@ -13,8 +17,8 @@ export default class AppHeader extends Component{
 						<span class='head-title'>{this.props.title}</span>
 					</div>
 					<div class='head-me'>
-						<Link to="/city-list"><span>深圳 <i class='iconfont icon-arrow-down'></i></span></Link>
-						<span class='iconfont icon-person'></span>
+						<Link to="/city-list"><span>{this.state.city} <i class='iconfont icon-arrow-down'></i></span></Link>
+						<Link to="/me"><span class='iconfont icon-person'></span></Link>
 					</div>
 				</div>
 		)
@@ -22,5 +26,12 @@ export default class AppHeader extends Component{
 	showbar(){
 		this.props.meunhide()
 	}
-
+	componentWillMount(){
+		changecitys = store.subscribe(()=>{
+			this.setState({city:store.getState().city})
+		})
+	}
+	componentWillUnmount(){
+		changecitys()
+	}
 }
