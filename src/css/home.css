@@ -31,12 +31,33 @@ width: 100%
     0%{opacity: 1};
     100%{opacity:0};
 }
-.user{
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    font-size: 16px;
-    opacity: 1;
-    animation: ai 1s step-end;
-
+.more-button {
+    width: 160px;
+    height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    margin: 10px auto 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #616161;
+    cursor: pointer;
+}
+.upcoming {
+    width: 65px;
+    height: 20px;
+    margin: 0 auto;
+    margin-bottom: -10px;
+    border-radius: 5px;
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #eee;
+    background-color: #a7a7a7;
+}
+.dividing-line {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #a8a8a8;
 }

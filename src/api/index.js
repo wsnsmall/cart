@@ -14,10 +14,24 @@ const nowMoviesApi = 'v4/api/film/now-playing'
 
 // http://m.maizuo.com/v4/api/film/coming-soon?page=1&count=7
 const newMoviesApi = 'v4/api/film/coming-soon'
+
+// http://m.maizuo.com/v4/api/cinema?__t=1503458112149
+const cinemaApi = 'v4/api/cinema'
+
+// http://m.maizuo.com/v4/api/film/3828?__t=1503486563059
+const moviesDetailsApi = 'v4/api/film'
+
+// http://aura.maizuo.com/api/ad/list
+const shoplistApi = 'api/ad/list'
+
+
 export default {
 	homeBannerApi,
 	homeMainApi,
 	CityApi,
 	nowMoviesApi,
-	newMoviesApi
+	newMoviesApi,
+	cinemaApi,
+	moviesDetailsApi,
+	shoplistApi
 }

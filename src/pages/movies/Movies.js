@@ -3,6 +3,7 @@ import {HashRouter as Router , NavLink , Route} from 'react-router-dom'
 import HomeServer from '../../Services/HomeServer.js'
 import Now from './Now.js'
 import New from './New.js'
+
 import '../../css/movies.css'
 let moviesScroll;
 let i=1;
@@ -15,7 +16,7 @@ export default class Movies extends Component{
 			newmovies:[]
 		}
 	}
-	render(){	
+	render(){
 		return (
 			<Router>
 			<div class="page" ref='page'>
@@ -29,8 +30,9 @@ export default class Movies extends Component{
 						return <Now nowmovies={this.state.nowmovies} />
 					}} />
 					<Route path='/movies/new' render={()=>{
-						return <New newmovies={this.state.newmovies} />
+						return <New newmovies={this.state.newmovies} history={history}/>
 					}} />
+					
 				</div>
 				<div class='addmore'>{this.state.more}</div>
 				</div>
@@ -63,7 +65,7 @@ export default class Movies extends Component{
 						HomeServer.nowMovies(i).then((res)=>{
 							this.setState({nowmovies:this.state.nowmovies.concat(res)})
 						})
-					}, 1500);
+					}, 500);
 					
 				}else{
 					this.setState({more:'没有更多数据了'})

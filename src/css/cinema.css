@@ -1,0 +1,70 @@
+.cinema-area{
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+.cinema-det{
+    width: 100%;
+    padding: 15px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+.tui{
+    width: 14px;
+    height:14px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    position: absolute;
+    top:22px;
+    right:30%;
+    border-radius: 50%;
+    border:1px solid #ff9658;
+    color:#ff9658;
+}
+.zuo{
+    width: 14px;
+    height:14px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    position: absolute;
+    top:22px;
+    right:35%;
+    border-radius: 50%;
+    border:1px solid #51add0;
+    color:#51add0;  
+}
+.cinemaname p{
+    width: 60%;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 30px;
+}
+.address{
+    width:60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ccc;
+    font-size: 12px;
+    margin-top:5px;
+}
+.actives span{
+    display: inline-block;
+    border-radius: 10%;
+    margin-right: 10px;
+    font-size: 12px;
+    background: #51add0;
+    color: white;
+}
+.actives span:nth-of-type(2){
+    background: #ff9658;
+}
+.cinema-list li{
+    border-bottom: 1px solid white;
+}

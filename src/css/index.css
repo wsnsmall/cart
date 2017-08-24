@@ -109,5 +109,5 @@ a{
 
 .slide-appear.slide-appear-active {
   transform: translateY(0%);
-  transition: 0.4s;
+  transition: 0.2s;
 }

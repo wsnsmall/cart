@@ -77,10 +77,15 @@ export default class City extends Component{
 		cityScroll.scrollTo(0,-this.refs['c'+index].offsetTop,1000)
 	}
 	componentWillMount(){
-		HomeServer.getCity().then((res)=>{
-			this.setState({citys:res})
-			
-		})
+		if(window.sessionStorage.getItem('city')){
+			let citys = JSON.parse(window.sessionStorage.getItem('city'))
+			this.setState({citys:citys})
+		}else{
+			HomeServer.getCity().then((res)=>{
+				this.setState({citys:res})	
+			})
+		}
+		
 	}
 	componentDidMount(){
 		cityScroll = new IScroll("#page",{

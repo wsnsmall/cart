@@ -1,0 +1,80 @@
+.icon{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin:8px 0;
+}
+.shoplist{
+    margin-top:10px;
+    background: #fff;
+}
+.shop-list .shoplist:nth-of-type(1){
+    width: 50%;
+    float: left;
+}
+.shop-list .shoplist:nth-of-type(2){
+    width: 50%;
+    float: left;
+}
+.shoplist img{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.iconlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    box-sizing: border-box;
+    font-size: 12px;
+    margin: 8px 0;
+}
+.iconlist img{
+    width: 40px;
+    height:40px;
+}
+.iconlist p{
+    line-height: 30px;
+}
+.details-pic{
+    width: 100px;
+    height:140px;
+    display: inline-block;
+    background: #fff;
+}
+.details-pic img{
+    width: 85px;
+    height: 85px
+}
+.details-pic p{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: #323232;
+    margin-left: 10px;
+}
+.details-pic span{
+    font-size: 13px;
+    color: #ff6640;
+    margin-left: 10px;
+}
+.det-wrp{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.details-pic>div{
+    margin-top:20px;
+    text-align: center;
+    padding: 30px 20px;
+    border:1px solid #eee;
+    border-radius: 50%;
+}

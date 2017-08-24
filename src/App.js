@@ -5,6 +5,7 @@ import {HashRouter as Router , NavLink , Route} from 'react-router-dom'
 import SilderInfo from './Services/SilderInfo.js'
 import AppHeader from './views/common/AppHeader.js'
 import City from './pages/City.js'
+import Details from './pages/details.js'
 export default class App extends Component{
 	constructor(){
 		super();
@@ -39,6 +40,7 @@ export default class App extends Component{
 					<AppHeader title={this.state.hometitle} meunhide={this.meunhide.bind(this)}/>
 					{pages}
 					<Route path="/city-list" component={City}/>
+					<Route path="/movies/details" component={Details}/>
 					<div id='root' style={rootStyle}>
 						<span class='cover' style={coverStyle} onClick={this.hide.bind(this)}></span>
 						
